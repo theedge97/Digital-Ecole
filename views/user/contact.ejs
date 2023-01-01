@@ -1,0 +1,102 @@
+<%- include('tete'); -%>
+<style>
+    #notifi{
+text-align: left;
+font-size: 17px;
+margin-top: 5px;
+z-index: 100;
+padding: 5px;
+border-radius: 5px;
+color: #721c24;
+background-color: #f8d7da;
+border-color: #f5c6cb;
+position: absolute; 
+top: 60%;
+display: none;
+    }
+</style>
+<!-- en tete-->
+<%- include('header'); -%>
+<!-- Slider area -->
+<section class="banner_area" data-stellar-background-ratio="0.5">
+    <h2>Contact</h2>
+    <ol class="breadcrumb">
+        <li><a href="#" class="active">ici se trouve nos renseingnement</a></li>
+    </ol>
+</section>
+<div class="container">
+    <div class="row">
+        <% if(typeof erreur !== "undefined"){ %>
+            <div id="notifi" class="col-lg-offset-3   col-md-offset-4 col-sm-11 col-xs-12 col-md-6 col-lg-4 ">
+              <ul>
+                <% for(var i= 0 ; i < erreur.length; i++)  {%> 
+                <li><%= erreur[i].msg %></li>
+                  <% } %>
+                </ul>
+            </div>
+          </div>
+          <% } %>
+    </div>
+</div>
+    
+       <!-- All contact Info -->
+<section class="all_contact_info">
+    <div class="container">
+        <div class="row contact_row">
+            <div class="col-sm-6 contact_info">
+                <h2>Contact Info</h2>
+                <p>Ecole digital est une ecole qui offre une formation de qualite a vos enfants.Ecole digital est une ecole qui offre une formation de qualite a vos enfants.Ecole digital est une ecole qui offre une formation de qualite a vos enfants.Ecole digital est une ecole qui offre une formation de qualite a vos enfants.Ecole digital est une ecole qui offre une formation de qualite a vos enfants.Ecole digital est une ecole qui offre une formation de qualite a vos enfants.Ecole digital est une ecole qui offre une formation de qualite a vos enfants.</p>
+                <p>Ecole digital est une ecole qui offre une formation de qualite a vos enfants.Ecole digital est une ecole qui offre une formation de qualite a vos enfants.Ecole digital est une ecole qui offre une formation de qualite a vos enfants.Ecole digital est une ecole qui offre une formation de qualite a vos enfants.Ecole digital est une ecole qui offre une formation de qualite a vos enfants.Ecole digital est une ecole qui offre une formation de qualite a vos enfants.Ecole digital est une ecole qui offre une formation de qualite a vos enfants.</p>
+                <div class="location">
+                    <div class="location_laft">
+                        <a class="f_location" href="#">Lieux:</a>
+                        <a href="#">telephone</a>
+                        <a href="#">email</a>
+                    </div>
+                    <div class="address">
+                        <a href="#">Conakry, Enta, quartier wassa-wassa,<br> En face de la station Shell </a>
+                        <a href="#">+224 625 281 179</a>
+                        <a href="#">ecoledigital@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 contact_info send_message">
+                <h2>Envoyer votre message</h2>
+                <form method="POST" action="/contacter" class="form-inline contact_box">
+                    <input type="text" style="color: black;" name="nom" class="form-control input_box" placeholder="Votre Nom *">
+                    <input type="text" style="color: black;" name="prenom" class="form-control input_box" placeholder="Votre prenom *">
+                    <input type="text" style="color: black;" name="email" class="form-control input_box" placeholder="Votre Email *">
+                    <textarea style="color: black;" class="form-control input_box" name="message" placeholder="Message"></textarea>
+                    <button style="width: 40%;" type="submit" class="btn btn-default">Envoyer Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>   
+
+<%- include('pied'); -%>
+<script>
+
+'<% if(typeof erreur !== "undefined"){ %>'
+$("#notifi").css({ 
+  display: 'block'
+});
+setTimeout(function () {
+$("#notifi").css({ 
+  display: 'none'
+});
+}, 5000)
+'<% } %> '
+'<% if(typeof authentifierreur !== "undefined"){ %>'
+$("#pasauth").css({ 
+  display: 'block'
+});
+setTimeout(function () {
+$("#pasauth").css({ 
+  display: 'none'
+});
+}, 5000)
+'<% } %> '
+</script>
+</body>
+</html>

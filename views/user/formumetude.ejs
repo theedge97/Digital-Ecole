@@ -1,0 +1,377 @@
+<%- include('tete'); -%>
+<link rel="stylesheet" type="text/css" href="/assets/semantic/css/jquery-ui.min.css">
+    <style>
+    .ui-tabs-nav li > a
+    {
+
+        width: 100%;
+        text-align: center;
+        height: 70px;
+        font-size: 20px;
+        padding-top: 40px;
+    }
+    .ui-tabs-nav li
+    {
+        width: 32%;
+    }
+    .ui-widget-header
+    {
+        background: #111F29 none repeat scroll 0% 0%;
+        color: #1891EC;
+        height: 80px; 
+        width: 100%;
+    }
+    .ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+    border: 1px solid #003eff;
+    background: #F6B60B;
+    font-weight: normal;
+    color: #ffffff;
+}
+    #discution > li
+    {
+        border-bottom: 2px solid silver; 
+        box-shadow: 5px 5px 5px 5px  silver;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: -40px;
+        margin-top: 30px;
+    
+    }
+    #discution > li > a:hover
+    {
+        text-decoration: none;
+    }
+    .user-profile-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+.rounded-circle {
+    border-radius: 50% !important;
+}
+/* lien de telechargement */
+#telelien:hover
+{
+    color: #f8b81d;
+}
+
+
+</style>
+<!-- en tete-->
+<%- include('header'); -%>
+<!-- Slider area -->
+<div class="container">
+    <div style="background-color: #fff;" class="row  hidden-md hidden-lg">
+         <div class="col-lg-12 col-sm-12">
+           <div class="dropdown  pull-right"> 
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><img src="/assets/semantic/images/profile.jpg" style="height: 50px;" class="img-circle" alt="" /><b class="caret"></b></a>
+              <ul style="top: 50px;" class="dropdown-menu">
+                <div style="background: #fff; padding: 25px;" class="col-md-4 col-lg-3 ">
+                         <div class="card card-white">
+                             <div class="text-center card-body user-profile-card">
+                                 <p class="text-center m-t-lg">Nom au complet</p>
+                                 <h4 class="text-center"><%= nom %></h4>
+                                 <hr>
+                                 <ul class="list-unstyled text-center">
+                                     <li>
+                                         <p><i class="text-center"></i>Matricule</p>
+                                     </li>
+                                     <li>
+                                         <h4><%= matricule %></h4>
+                                     </li>
+                                     <li>
+                                         <p><i class="text-center"></i>Classe</p>
+                                     </li>
+                                     <li>
+                                        <%= classe %></h4>
+                                     </li>
+                                 </ul>
+                                 <hr>
+                                <a href="/forum/modifier"><button style=" background: #F6B60B; border-color: #fff;" class="btn btn-info btn-block">Modifier profil</button></a> 
+                                 <hr>
+                                 <button style=" background: #F6B60B; border-color: #fff;" class="btn btn-info btn-block">Deconnecter</button>
+                             </div>
+                         </div>
+                     </div>
+              </ul>
+             </div>
+         </div>
+     </div>   
+ </div>
+  <div id="tabs">
+ <ul>
+     <li><a href="#tabs-1">Video</a></li>
+     <li><a href="#tabs-2">PDF</a></li>
+      <li><a href="#tabs-3">QCM</a></li>
+ </ul>
+ 
+ <div id="tabs-1">
+     <section style="background: #FBFBFB none repeat scroll 0% 0%; " id="content">
+  <div class="container">  
+     <!-- debut du formulaire -->
+     <div class="row">
+              <div style="background: #fff; padding: 25px;" class="col-md-3 hidden-xs col-lg-3">
+                         <div class="card card-white">
+                             <div class="card-heading clearfix">
+                                 <h4 class="text-center card-title">Profile d'utilisateur</h4>
+                             </div>
+                             <div class="text-center card-body user-profile-card">
+                                 <img src="/assets/semantic/images/profile.jpg" class="user-profile-image rounded-circle" alt="" />
+                                 <p class="text-center m-t-lg">Nom au complet</p>
+                                 <h4 class="text-center"><%= nom %></h4>
+                                 <hr>
+                                 <ul class="list-unstyled text-center">
+                                     <li>
+                                         <p><i class="text-center"></i>Matricule</p>
+                                     </li>
+                                     <li>
+                                         <h4><%= matricule %></h4>
+                                     </li>
+                                     <li>
+                                         <p><i class="text-center"></i>Classe</p>
+                                     </li>
+                                     <li>
+                                        <%= classe %></h4>
+                                     </li>
+                                 </ul>
+                                 <hr>
+                                 <a href="/forum/modifier"><button style="background-color: #f8b81d; border: none;" class="btn btn-info btn-block">Modifier profil</button></a>
+                                 <hr>
+                            
+                                 <a href="/forum/deconnection"><button style="background-color: #f8b81d; border: none;" class="btn btn-info btn-block">Deconnecter</button></a> </div>
+                         </div>
+                     </div>
+            <div class="col-lg-offset-1 col-md-offset-1 col-sm-8 col-md-8 col-lg-8">
+            <div class="row">         
+         <div style="background: #fff; margin-top: 20px; height: 100%; padding: 25px; margin-bottom: 5px;" class="col-lg-12" >
+         <div class="row">
+         <div class="embed-responsive embed-responsive-16by9">
+             <video src="/assets/semantic/video/<% if (typeof video !== 'undefined') { %><%= video %><% }if (typeof videodefo !== 'undefined'){ %><%=  videodefo  %> <% } %> " controls class="col-lg-12 col-md-12 col-sm-12 col-xs-12 embed-responsive-item"></video>
+         </div>
+         <div class="col-lg-12">
+             <p>Cliquez ici pour telecharger la video  <a href="/assets/semantic/video/<% if (typeof video !== 'undefined') { %><%= video %><% }if (typeof videodefo !== 'undefined'){ %><%=  videodefo  %> <% } %> " id="telelien" href="#">ici</a>/ <a id="telelien" href="#">Normale(720p)</a> /<a id="telelien" href="#">Mobile(480p)</a> /<a id="telelien" href="#">Basse(240p)</a></p>
+         </div>
+
+         <div class=" col-lg-12">
+<h4 style="color: #F6B60B;"> <% if (typeof lechapitre !== "undefined") { %> <span> <%= lechapitre %> :</span>
+    <% } else{ %> <span>Chapitre 1: <%=  chapdefo  %> :</span>  <% } %>  <% if (typeof sousmatiere !== "undefined") { %> <span> <%= sousmatiere %> </span>
+        <% } else{ %>  <span> <%= souschapdefo %> </span>  <% } %> </h4>
+         </div>
+     </div>
+         </div>
+         <div  style="background: #fff; margin-top: 20px; height: 100%; padding: 25px;" class="col-lg-12" >
+        <div id="monaccordeon" class="panel-group col-lg-12">
+<h3> Les chapitres du cours de <%= reponse %></h3>
+<% for(var i= 0 ; i < chapitre.length; i++)  {%>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h3 class="panel-title">
+<a class="accordion-toggle" href="#item<%= i + 1 %>" dataparent="#
+monaccordeon" data-toggle="collapse">Chapitre <%= i + 1 %> :  <%= chapitre[0][i].titre %> </a>
+</h3>
+</div>
+<div id="item<%= i + 1 %>" class="panel-collapse collapse in">
+<div class="panel-body"> 
+    
+<ul class="list-unstyled">
+    <% for(var k= 0 ; k < souschapitre[k].length; k++)  {%>
+   <li><a class="lien" href="/formumetude/<%= laclasse %>/<%= reponse %>/Chapitre <%= i + 1 %> : <%= chapitre[0][i].titre %>/<%=souschapitre[i][k].titre  %>"><%= souschapitre[i][k].titre%></a></li>
+   
+   <% } %>
+
+
+</ul>
+</div>
+</div>
+</div>
+<% } %>
+
+         </div>
+
+     </div>
+     </div>
+         
+     </div>
+ </div>
+ </section>
+ </div>
+ <div id="tabs-2">
+     <section style="background: #FBFBFB none repeat scroll 0% 0%; " id="content">
+        <div class="container">  
+     <!-- debut du formulaire -->
+     <div class="row">
+          <div style="background: #fff; padding: 25px;" class="col-md-3 hidden-xs col-lg-3">
+                         <div class="card card-white">
+                             <div class="card-heading clearfix">
+                                 <h4 class="text-center card-title">Profile d'utilisateur</h4>
+                             </div>
+                             <div class="text-center card-body user-profile-card">
+                                 <img src="/assets/semantic/images/profile.jpg" class="user-profile-image rounded-circle" alt="" />
+                                 <p class="text-center m-t-lg">Nom au complet</p>
+                                 <h4 class="text-center"><%= nom %></h4>
+                                 <hr>
+                                  <ul class="list-unstyled text-center">
+                                    <li>
+                                        <p><i class="text-center"></i>Matricule</p>
+                                    </li>
+                                    <li>
+                                        <h4><%= matricule %></h4>
+                                    </li>
+                                    <li>
+                                        <p><i class="text-center"></i>Classe</p>
+                                    </li>
+                                    <li>
+                                       <%= classe %></h4>
+                                    </li>
+                                 </ul>
+                                 <hr>
+                                 <a href="/forum/modifier"><button style="background-color: #f8b81d; border: none;" class="btn btn-info btn-block">Modifier profil</button></a>
+                                 <hr>
+                                 <button style="background-color: #f8b81d; border: none;" class="btn btn-info btn-block">Deconnecter</button>
+                             </div>
+                         </div>
+                     </div>
+                      <div class="col-lg-offset-1 col-md-offset-1 col-sm-8 col-md-8 col-lg-8">
+            <div class="row">         
+         <div style="background: #fff; margin-top: 20px; height: 100%; padding: 20px; margin-bottom: 5px;" class="col-lg-12" >
+            <ul>
+                <div class="col-lg-12">
+                    <li> <h4>Cliquez ici pour telecharger le cours sur <% if (typeof lechapitre !== "undefined") { %> <span style="color: #f8b81d; font-size: 20px;"> <%= lechapitre %> :</span>
+                        <% } else{ %> <span style="color: #f8b81d; font-size: 20px;">Chapitre 1: <%=  chapdefo  %> </span>  <% } %> en format PDF</h4><br>
+                     <div class="col-lg-offset-2 col-md-offset-1 col-sm-8 col-md-8 col-lg-8"> <a href="/assets/semantic/pdf/<%= Pdf[0] %>" id="telecharge"><button style="background-color: #f8b81d; font-size: 20px; color: #fff; font-weight: bold; border: none;" class="btn btn-info btn-block ">Telecharger</button></a></div>
+                    </li>
+                </div>
+                <div class="col-lg-12">
+                    <li><h4>Cliquez ici pour telecharger l'exercice sur <% if (typeof lechapitre !== "undefined") { %> <span style="color: #f8b81d; font-size: 20px;"> <%= lechapitre %> :</span>
+                        <% } else{ %> <span style="color: #f8b81d; font-size: 20px;">Chapitre 1: <%=  chapdefo  %> </span>  <% } %> en format PDF</h4><br>
+                     <div class="col-lg-offset-2 col-md-offset-1 col-sm-8 col-md-8 col-lg-8"> <a href="/assets/semantic/pdf/<%= Pdf[1] %>" id="telecharge"><button style="background-color: #f8b81d; font-size: 20px; color: #fff; font-weight: bold; border: none;" class="btn btn-info btn-block ">Telecharger</button></a></div>
+                </li>
+                </div>
+            </ul>
+              </div>
+
+     </div>
+     </div>
+     </div>
+     </div> 
+     </section>
+ </div>
+
+ <div id="tabs-3">
+     <section style="background: #FBFBFB none repeat scroll 0% 0%; " id="content">
+        <div class="container">  
+     <!-- debut du formulaire -->
+     <div class="row">
+          <div style="background: #fff; padding: 25px;" class="col-md-3 hidden-xs col-lg-3">
+                         <div class="card card-white">
+                             <div class="card-heading clearfix">
+                                 <h4 class="text-center card-title">Profile d'utilisateur</h4>
+                             </div>
+                             <div class="text-center card-body user-profile-card">
+                                 <img src="/assets/semantic/images/profile.jpg" class="user-profile-image rounded-circle" alt="" />
+                                 <p class="text-center m-t-lg">Nom au complet</p>
+                                 <h4 class="text-center"><%= nom %></h4>
+                                 <hr>
+                                  <ul class="list-unstyled text-center">
+                                    <li>
+                                        <p><i class="text-center"></i>Matricule</p>
+                                    </li>
+                                    <li>
+                                        <h4><%= matricule %></h4>
+                                    </li>
+                                    <li>
+                                        <p><i class="text-center"></i>Classe</p>
+                                    </li>
+                                    <li>
+                                       <%= classe %></h4>
+                                    </li>
+                                 </ul>                                    <hr>
+                                 <a href="/forum/modifier"><button style="background-color: #f8b81d; border: none;" class="btn btn-info btn-block">Modifier profil</button></a>
+                                 <hr>
+                                 <button style="background-color: #f8b81d; border: none;"  class="btn btn-info btn-block">Deconnecter</button>
+                             </div>
+                         </div>
+                     </div>
+                      <div class="col-lg-offset-1 col-md-offset-1 col-sm-8 col-md-8 col-lg-8">
+            <div class="row">         
+         <div style="background: #fff; margin-top: 20px; height: 100%; padding: 25px; margin-bottom: 5px;" class="col-lg-12" >
+              <h3>Testez vos connaissances sur ce cours en repondant au question suivantes : </h3>
+         <div class="row">
+         <div class="col-lg-12">
+          
+            <% for(var i= 0 ; i < qcm.length; i++)  {%>
+            
+   <h3><%= i + 1 %>-)<%=  qcm[i]['titre'] %> </h3>
+   <span id="repond"><%=  qcm[i]['reponse'][0]['id'] %></span>
+   <% for(var j= 0 ; j < qcm[i]['choix'].length; j++)  {%>
+    
+     <div style="border: 2px solid silver; padding: 2px; padding-top: 10px;" class="form-group row" id="<?php echo $sou->idname; ?>" >
+     <input type="radio" name="<%=  i+1 %>" value="<%=  qcm[i]['choix'][j]['valeur'] %>" id="<%=  qcm[i]['choix'][j]['valeur'] %>"
+/> <label for="<%=  qcm[i]['choix'][j]['valeur'] %>"><%=  qcm[i]['choix'][j]['valeur'] %></label>
+     </div>
+     <% } %> 
+<% } %>
+<div class="form-group row">
+ <div class="col-lg-12 ">
+ <button  style="width: 100%; font-size: 23px; color: #fff; font-weight: bold; background-color: #f8b81d; border: none;" id="verification" type="submit" class=" btn btn-primary">Verification finale</button>
+ </div>
+</div>
+
+            
+         </div>
+     </div>
+         </div>
+
+     </div>
+     </div>
+     </div>
+     </div> 
+     </section>
+ </div>
+</div>
+
+<%- include('pied'); -%>
+<script src="moment.js"></script>
+<script>
+    moment().format();
+</script>
+<script src="/assets/semantic/js/jquery-ui.min.js"></script>
+     <script>
+    $( "#tabs" ).tabs();
+     var table = document.getElementsByTagName('input')
+     var verification = document.getElementById("verification")
+     verification.addEventListener('click', function (e) {
+        for (var j = 1; j < table.length; j++) {
+        var un = "<%=  qcm[0]['reponse'][0]['valeur'] %>"
+        var deux = "<%=  qcm[1]['reponse'][0]['valeur'] %>"
+        var trois = "<%=  qcm[2]['reponse'][0]['valeur'] %>";
+        var pere = table[j].parentNode
+         if (table[j].checked) {
+            if (table[j].value == un || table[j].value == deux || table[j].value == trois ) {
+                table[j].parentNode.style.borderColor = "green"
+            }else{
+                table[j].parentNode.style.borderColor = "red"
+            }
+                     }
+                     if (table[j].value == un || table[j].value == deux || table[j].value == trois ) {
+                table[j].parentNode.style.borderColor = "green"
+            }
+        
+         
+     }
+     
+     verification.style.display = "none"
+
+         
+     })
+     
+    
+    </script>
+</body>
+</html>

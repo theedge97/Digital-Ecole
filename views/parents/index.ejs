@@ -1,0 +1,66 @@
+<%- include('../pages/tete'); -%>
+<style>
+    #activite
+    {
+        box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2); 
+       
+        margin-bottom: 40px;
+        
+    }
+</style>
+<%- include('header'); -%>
+<!-- Slider area -->
+<!-- Slider area -->
+
+<!-- End Slider area -->
+
+<!-- Professional Builde -->
+<section class="professional_builder row">
+    <div class="container">
+       <div class="row builder_all">
+            <div class="col-md-4 col-sm-6 builder" id="activite" >
+                <a href="/parents/bulletins">
+                <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                <h4>Bulletin de note</h4>
+                <p>Retrouver ici les bullettins de note </p>
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6 builder" id="activite">
+                <a href="/parents/payement">
+                <i class="fa fa-money" aria-hidden="true"></i>
+                <h4>Situation de payement </h4>
+                <p>Decouvrer ici les diffèrents payement de la scholarité</p>
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6 builder" id="activite">
+                <a href="/parents/emploisdutemps">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <h4>Emplois du temps</h4>
+                <p>Decouvrez ici l'emplois du temps de l'enfants </p>
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6 builder" id="activite">
+                <a href="/parents/actualite">
+                <i class="fa fa-flag" aria-hidden="true"></i>
+                <h4>Actualite de l'ecole</h4>
+                <p>Decouvrez ici les actualités de l'ecole </p>
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6 builder" id="activite">
+                <a href="/bibliotheque">
+                <i class="fa fa-gear" aria-hidden="true"></i>
+                <h4>Parametre</h4>
+                <p>Modifier ici vos parametre </p>
+                </a>
+            </div>
+       </div>
+    </div>
+</section>
+<!-- End Professional Builde -->
+
+<!-- About Us Area -->
+
+<%- include('../pages/pied'); -%>
+<script src="/socket.io/socket.io.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>En tete</title>
+        <link rel="stylesheet" href="/assets/semantic/semantic.min.css" />
+    </head>
+    <body>
+       
+        <div class="ui main container">
+            <h3>Ma todoliste</h3>
+            <form action="/" method="POST" class="ui form">
+                <div class="field">
+                    <label for="message">Que dois je faire ?</label>
+                    <input type="text" name="liste" id="liste" />
+                </div>
+                <button type="submit" class="ui blue labeled submit icon button ">
+                    <i class="icon edit"></i>Valider
+                </button>
+            
+               </form>
+               <h3>La Liste des taches a effectuer</h3>
+               <ul>
+                <% todolist.forEach(function(todo, index) { %>
+                <li><a href="/todo/supprimer/<%= index %>">✘</a> <%=
+                todo %></li>
+                <% }); %>
+                </ul>
+        </div>
+        
+    </body>
+</html>

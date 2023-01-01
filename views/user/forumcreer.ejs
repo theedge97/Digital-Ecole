@@ -1,0 +1,211 @@
+<%- include('tete'); -%>
+<style>
+      
+    /* notification */
+.alerter{
+text-align: left;
+font-size: 20px;
+margin-top: 5px;
+z-index: 100;
+padding: 5px;
+border-radius: 5px;
+color: #721c24;
+background-color: #f8d7da;
+border-color: #f5c6cb;
+} 
+.sucess{
+background-color: #28a745;
+color: white;
+display: none;
+position: fixed;
+text-align: center;
+top: 90%; 
+font-size: 19px;
+z-index: 100;
+padding: 5px;
+border-radius: 2px;
+}
+.pascompte
+{
+ text-align: left;
+font-size: 20px;
+margin-top: 5px;
+z-index: 100;
+padding: 5px;
+border-radius: 5px;
+color: #856404;
+background-color: #fff3cd;
+border-color: #ffeeba;
+}
+</style>
+<!-- en tete-->
+<%- include('header'); -%>
+<!-- Slider area -->
+
+<section class="banner_area" data-stellar-background-ratio="0.5">
+    <h2> creer compte</h2>
+    <ol class="breadcrumb">
+        <li><a href="#" class="active">Creer votre compte avant de se connecter</a></li>
+    </ol>
+</section>
+    
+    <div class="container">
+        <div class="row about_row">
+            
+<% if(typeof erreur !== "undefined"){ %>
+    <div class="col-lg-offset-3  col-md-offset-3 col-sm-11 col-xs-12 col-md-5 col-lg-6 alerter">
+      <ul>
+      <% for(var i= 0 ; i < erreur.length; i++)  {%> 
+      <li><%= erreur[i].msg %></li>
+        <% } %>
+      </ul>
+    </div>
+    <% } %> 
+    <% if(typeof authentifierreur !== "undefined"){ %>
+      <div class="col-lg-offset-3  col-md-offset-3 col-sm-11 col-xs-12 col-md-5 col-lg-6 pascompte">
+        <ul>
+        
+        <li><%= authentifierreur %></li>
+        
+        </ul>
+      </div>
+      <% } %> 
+                <div style="background: #fff; padding: 25px;" class=" col-lg-offset-3 col-md-offset-3 col-sm-offset-2 col-sm-8 col-md-6 col-lg-6">
+            <h3>Pas encore  inscrit ? creer compte</h3>
+            <form action="/forumcreer"  method="POST" style="padding-top:  30px;">
+                          <div class="form-group row">
+                                <label for="nom" class="col-lg-12 input-lg col-form-label">Entrer votre Nom</label>
+                                <div class="col-lg-12">
+                                    <input type="text" name="nom" class="input-lg form-control" id="nom">
+                           </div>
+                            </div>
+                          <div class="form-group row">
+                              <label for="prenom" class="col-lg-12 input-lg col-form-label">Entrer votre Prenom</label>
+                              <div class="col-lg-12">
+                                  <input type="text" name="prenom" class="input-lg form-control" id="prenom">
+                         </div>
+                          </div>
+                            <div class="form-group row">
+                                <label for="lematricule" class="col-lg-12 input-lg col-form-label">Votre Matricule</label>
+                                <div class="col-lg-12">
+                                    <input type="number" name="matricule" class=" input-lg form-control" id="lematricule">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="telephone" class="col-lg-12 input-lg col-form-label">Votre numero de telephone</label>
+                                <div class="col-lg-12">
+                                    <input type="tel" name="telephone" class=" input-lg form-control" id="lematricule">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="motdepasse" class="col-lg-12 input-lg col-form-label">Mot de passe </label>
+                                <div class="col-lg-12">
+                              <input type="password" name="motdepasse" class=" input-lg form-control" id="motdepasse">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="motdepasse1" class="col-lg-12 input-lg col-form-label">Confirmer mot de passe </label>
+                                <div class="col-lg-12">
+                              <input type="password" name="motdepasse1" class=" input-lg form-control" id="motdepasse1">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="classe" class="col-lg-12 input-lg col-form-label">Choissisez votre classe</label>
+                                <div class="col-lg-12">
+                                  <select name='classe' id="classe" class=" input-lg form-control">
+                                    <optgroup label="college">
+                                      <option value="7e annee">7eme Annee</option>
+                                      <option value="8e annee">8eme Annee</option>
+                                      <option value="9e annee">9eme Annee</option>
+                                      <option value="10e annee">10eme Annee</option>
+                                    </optgroup>
+                                    <optgroup label="lycee">
+                                      <option value="11 ss">11eme Science Sociale</option>
+                                      <option value="11 se">11eme Science Experimentale</option>
+                                      <option value="11 sm">11eme Science Mathematique</option>
+                                      <option value="12 ss">12eme Science Sociale</option>
+                                      <option value="12 se">12eme Science Experimentale</option>
+                                      <option value="12 sm">12eme Science Mathematique</option>     
+                                      <option value="tss">Terminale Science Sociale</option>
+                                      <option value="tse">Terminale Science Experimentale</option>
+                                      <option value="tsm">Terminale Science Mathematique</option>
+                                    </optgroup>
+                    </select>
+                                </div>
+                            </div>
+
+<a style="font-size: 20px; color: #F6B60B;" class="active" href="/forum/modifier">Mot de passe oublier ?</a><br>
+    <div class="form-group row">
+                                <div class="col-lg-12 ">
+                                    <button style="width: 100%; background: #F6B60B; border-color: #fff; font-size: 20px;" type="submit" class=" btn btn-primary">creer un compte</button>
+                                </div>
+                            </div>
+                        </form>
+        <a class="active" style="font-size: 20px; color: #F6B60B;" href="#">Deja inscrit ?</a><br>
+        <a  href="/forumconnection"><button style="width: 100%; background: #F6B60B; border-color: #fff; font-size: 20px;" class=" btn btn-primary">Se connecter</button></a>
+        </div>
+        </div>
+    </div>
+<%- include('pied'); -%>
+<script>
+
+  /*
+    $( document ).ready(function() {
+  
+  // SUBMIT FORM
+    $("#connection").submit(function(event) {
+    // Prevent the form from submitting via the browser.
+    event.preventDefault();
+    ajaxPost();
+  });
+    
+    
+    function ajaxPost(){
+      
+      // PREPARE FORM DATA
+      var formData = {
+        matricule : $("#lematricule").val(),
+        motdepasse :  $("#motdepasse").val(),
+        classe : $("#classe").val()
+      }
+      
+      // DO POST
+      $.ajax({
+      type : "POST",
+      contentType : "application/json",
+      url : "/forumapprentissage",
+      data : JSON.stringify(formData),
+      dataType : 'json',
+      success: function () {
+      $('#error-group').css('display', 'none');
+      alert('Your submission was successful');
+    },
+    error: function (data) {
+      $('#error-group').css('display', 'block');
+      var errors = JSON.parse(data.responseText);
+      var errorsContainer = $('#errors');
+      errorsContainer.innerHTML = '';
+      var errorsList = '';
+alert('ayt')
+      for (var i = 0; i < errors.length; i++) {
+        errorsList += '<li>' + errors[i].msg + '</li>';
+      }
+      errorsContainer.html(errorsList);
+    }
+    });
+      
+      // Reset FormData after Posting
+      resetData();
+ 
+    }
+    
+    function resetData(){
+      $("#matricule").val("");
+      $("#motdepasse").val("");
+      $("#classe").val("");
+    }
+})
+*/
+</script>
+</body>
+</html>

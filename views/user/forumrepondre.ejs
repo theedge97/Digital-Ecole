@@ -1,0 +1,191 @@
+<%- include('tete'); -%>
+<style>
+
+    .user-profile-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+.rounded-circle {
+    border-radius: 50% !important;
+}
+
+
+</style>
+<!-- en tete-->
+<%- include('header'); -%>
+<!-- Slider area -->
+<div class="container">
+    <div style="background-color: #fff;" class="row  hidden-md hidden-lg">
+         <div class="col-lg-12 col-sm-12">
+           <div class="dropdown  pull-right"> 
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><img src="/assets/semantic/images/profile.jpg" style="height: 50px;" class="img-circle" alt="" /><b class="caret"></b></a>
+              <ul style="top: 50px;" class="dropdown-menu">
+                <div style="background: #fff; padding: 25px;" class="col-md-4 col-lg-3 ">
+                         <div class="card card-white">
+                             <div class="text-center card-body user-profile-card">
+                                 <p class="text-center m-t-lg">Nom au complet</p>
+                                 <h4 class="text-center"><%= nom %></h4>
+                                 <hr>
+                                 <ul class="list-unstyled text-center">
+                                  <li>
+                                    <p><i class="text-center"></i>Matricule</p>
+                                </li>
+                                <li>
+                                    <h4><%= matricule %></h4>
+                                </li>
+                                <li>
+                                    <p><i class="text-center"></i>Classe</p>
+                                </li>
+                                <li>
+                                   <%= classe %></h4>
+                                </li>                                 </ul>
+                                 <hr>
+                                <a href="/forum/modifier"><button style=" background: #F6B60B; border-color: #fff;" class="btn btn-info btn-block">Modifier profil</button></a> 
+                                 <hr>
+                                 <a href="/forum/deconnection"><button style="background-color: #f8b81d; border: none;" class="btn btn-info btn-block">Deconnecter</button></a>
+                             </div>
+                         </div>
+                     </div>
+              </ul>
+             </div>
+         </div>
+     </div>   
+ </div>
+ <section class="banner_area" data-stellar-background-ratio="0.5">
+     <h2>Repondre une question</h2>
+     <ol class="breadcrumb">
+         <li><a href="#" class="active">Le forum permet l'entraide entre les  eleves</a></li>
+     </ol>
+ </section>
+ 
+       <div class="container">  
+     <!-- debut du formulaire -->
+     <div class="row">
+              <div style="background: #fff; padding: 25px;" class="col-md-3 hidden-xs col-lg-3">
+                         <div class="card card-white">
+                             <div class="card-heading clearfix">
+                                 <h4 class="text-center card-title">Profile d'utilisateur</h4>
+                             </div>
+                             <div class="text-center card-body user-profile-card">
+                                 <img src="/assets/semantic/images/profile.jpg" class="user-profile-image rounded-circle" alt="" />
+                                 <p class="text-center m-t-lg">Nom au complet</p>
+                                 <h4 class="text-center"><%= nom %></h4>
+                                 <hr>
+                                 <ul class="list-unstyled text-center">
+                                  <li>
+                                    <p><i class="text-center"></i>Matricule</p>
+                                </li>
+                                <li>
+                                    <h4><%= matricule %></h4>
+                                </li>
+                                <li>
+                                    <p><i class="text-center"></i>Classe</p>
+                                </li>
+                                <li>
+                                   <%= classe %></h4>
+                                </li>
+                                 </ul>
+                                 <hr>
+                                 <a href="/forum/modifier"><button style=" background: #F6B60B; border-color: #fff;" class="btn btn-info btn-block">Modifier profil</button></a>
+                                 <hr>
+                                 <a href="/forum/deconnection"><button style="background-color: #f8b81d; border: none;" class="btn btn-info btn-block">Deconnecter</button></a></div>
+                         </div>
+                     </div>
+            <div class="col-lg-offset-1 col-md-offset-1 col-sm-8 col-md-8 col-lg-8">
+           <div class="row">
+           <div style="background: #fff; padding: 25px;" class="col-lg-12">
+             <h3 style="color:  #333;">Question</h3>
+           </div>
+
+            <div id="pagination" style="background:  #333; color: #fff; padding: 25px; margin-top: 20px;" class="col-md-12 mb">
+             <div class="message-p pn">
+               <div class="row">
+                 <div class="col-md-2 centered ">
+                   <img src="/assets/semantic/images/team/team1.jpg" class="img-circle" width="65">
+                 </div>
+                 <div class="col-md-10">
+                   <p style="color:  #f8b81d;">
+                     <name><%= question['pseudo'] %></name>
+                     
+                   </p>
+                   <p id="dateposeur" style=" color:  #f8b81d;" class="small"><%= question['date'] %> </p>
+                   <p style="color: #fff; font-weight: 900;" class="message"><%= question['question'] %></p>
+                 </div>
+               </div>
+             </div>
+             <!-- /Message Panel-->
+           </div>
+           
+             <h3 style="text-align: center; margin-top: 20px;">
+             
+              <%= lesreponse.length %>  Reponse</h3>
+
+              <% for(var i= lesreponse.length -1 ; i >= 0; i--)  {%>
+            <div id="pagination" style="background:  #f8b81d; color: #fff; padding: 25px; margin-top: 20px;" class="col-md-12 mb">
+             <div class="message-p pn">
+               <div class="row">
+                 <div class="col-md-2 centered ">
+                   <img src="/assets/semantic/images/team/team1.jpg" class="img-circle" width="65">
+                 </div>
+                 <div class="col-md-10">
+                   <p>
+                     <name><%= lesreponse[i]['pseudo'] %></name>        
+                   </p>
+                   <p id="date" class="small"><%= lesreponse[i]['date'] %></p>
+                   <p style="color: #fff; font-weight: 900;" class="message"><%= lesreponse[i]['reponse'] %></p>
+                 </div>
+               </div>
+             </div>
+             <!-- /Message Panel-->
+           </div>
+           <% } %>
+                  
+
+          <hr>
+         <hr>
+        
+           <div style="background: #fff; padding: 25px; margin-top: 20px;" class=" col-lg-12">
+             <form  action="/forumrepondre" method="POST">
+               <div class="form-group row">
+                 <label for="rep" class="col-lg-12 input-lg col-form-label">Repondre</label>
+                 <div class="col-lg-12">
+                   <textarea id="msg" style="width: 100%; " rows="6" class="col-lg-12 input-lg col-form-label" name="message" ></textarea>
+                 </div>
+               </div>
+               <div class="form-group row">
+                 <div class="col-lg-12 ">
+                   <button style="width: 100%; background-color: #f8b81d; border-color: #fff; font-size: 20px;" type="submit" name="creer" id="submit" class=" btn btn-primary">Repondre</button>
+                 </div>
+               </div>
+
+             </form>
+           </div>
+
+         </div>
+     </div>
+         
+     </div>
+ </div>
+
+<%- include('pied'); -%>
+
+<script src="/assets/semantic/js/moment.js"></script>
+<script src="/assets/semantic/js/moment-with-locales.js"></script>
+<script>
+  var ta = moment('24/12/2019 09:15:00', "DD MM YYYY hh:mm:ss").fromNow()
+  var date = document.querySelectorAll('#date')
+  var dateposeur = document.querySelector('#dateposeur')
+  moment.locale('fr')
+  var h = moment(dateposeur.textContent).fromNow();
+  dateposeur.innerHTML = h;
+  var element = '';
+  for (var  i = 0; i< date.length; i++) {
+   element = date[i].textContent;
+  var datation = moment(element).fromNow();
+  date[i].innerHTML = datation;
+      }
+  
+</script>
+</body>
+</html>

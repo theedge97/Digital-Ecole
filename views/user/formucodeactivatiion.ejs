@@ -1,0 +1,94 @@
+<%- include('tete'); -%>
+<style>
+      
+    /* notification */
+.alerter{
+text-align: left;
+font-size: 20px;
+margin-top: 5px;
+z-index: 100;
+padding: 5px;
+border-radius: 5px;
+color: #721c24;
+background-color: #f8d7da;
+border-color: #f5c6cb;
+} 
+.sucess{
+background-color: #28a745;
+color: white;
+display: none;
+position: fixed;
+text-align: center;
+top: 90%; 
+font-size: 19px;
+z-index: 100;
+padding: 5px;
+border-radius: 2px;
+}
+.pascompte
+{
+ text-align: left;
+font-size: 20px;
+margin-top: 5px;
+z-index: 100;
+padding: 5px;
+border-radius: 5px;
+color: #856404;
+background-color: #fff3cd;
+border-color: #ffeeba;
+}
+</style>
+<!-- en tete-->
+<%- include('header'); -%>
+<!-- Slider area -->
+<section class="banner_area" data-stellar-background-ratio="0.5">
+    <h2>Modification du mot de passe</h2>
+    <ol class="breadcrumb">
+        <li><a href="#" class="active">Modifier votre mot de passe</a></li>
+    </ol>
+</section>
+    <div class="container">  
+    <!-- debut du formulaire -->
+    <% if(typeof erreur !== "undefined"){ %>
+        <div class="col-lg-offset-3  col-md-offset-3 col-sm-11 col-xs-12 col-md-5 col-lg-6 alerter">
+          <ul>
+          <% for(var i= 0 ; i < erreur.length; i++)  {%> 
+          <li><%= erreur[i].msg %></li>
+            <% } %>
+          </ul>
+        </div>
+        <% } %>    
+    <% if(typeof authentifierreur !== "undefined"){ %>
+        <div class="col-lg-offset-3  col-md-offset-3 col-sm-11 col-xs-12 col-md-5 col-lg-6 pascompte">
+        <ul>
+
+        <li><%= authentifierreur %></li>
+
+        </ul>
+        </div>
+    <% } %>
+
+    <div style="background: #fff; padding: 25px;" class=" col-lg-offset-3 col-md-offset-3 col-sm-offset-2 col-sm-8 col-md-6 col-lg-6">
+        <form action="/forum/codeactivation"  method="POST" style="padding-top:  30px;">
+                        <div class="form-group row">
+                            <label for="code" class="col-lg-12 input-lg col-form-label">Tapez le code d'activation</label>
+                            <div class="col-lg-12">
+                                <input type="texte" name="code" class="input-lg form-control" id="email">
+                            </div>
+                        </div>
+<div class="form-group row">
+                            <div class="col-lg-12 ">
+                                <button style="width: 100%;  background: #F6B60B; border-color: #fff; font-size: 20px;" type="submit" class=" btn btn-primary">Envoyer</button>
+                            </div>
+                        </div>
+                    </form>
+    </div>
+</div>      
+    
+
+<%- include('pied'); -%>
+
+<script src="/assets/semantic/js/moment.js"></script>
+<script src="/assets/semantic/js/moment-with-locales.js"></script>
+</body>
+</html>

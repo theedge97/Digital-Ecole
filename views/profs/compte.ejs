@@ -1,0 +1,48 @@
+<%- include('tete'); -%>
+<!--sidebar end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper site-min-height">
+          <div class="row mt">
+            <div class="col-lg-12">
+              <div class="row content-panel">
+                <!-- /col-md-4 -->
+                <div class="right-divider col-md-offset-3 col-md-4 profile-text">
+                  <h3><%= nom %></h3>
+                  <h5>Identifiant: <%= identifiant %></h5>
+                  <h5>Numero de telephone: <%= telephone %></h5>
+                  <h5>Proffesseur de <%= profsde %></h5>
+                  <p>Vous dispensez les cours dans les classes suivantes : <% for(var i = 0 ; i< classeenseign.length ; i++){ %> <%= classeenseign[i]  %> <% } %>  </p>
+                  <br>
+                </div>
+                <!-- /col-md-4 -->
+                <div class="col-md-4 centered">
+                  <div class="profile-pic">
+                    <p><img src="/assets/semantic/profs/img/ui-sam.jpg" class="img-circle"></p>
+                    <p>
+                      <a style="text-decoration: none; color: #fff;" href="/profs/deconnection"><button class="btn btn-theme"><i class="fa fa-check"></i> Deconnecter</button>
+                      </a>
+                      <button class="btn btn-theme02">Modifier compte</button>
+                    </p>
+                  </div>
+                </div>
+                <!-- /col-md-4 -->
+              </div>
+              <!-- /row -->
+            </div>
+            </div>
+            <!-- /row -->
+          </div>
+          <!-- /container -->
+        </section>
+        <!-- /wrapper -->
+      </section>
+    <!-- /MAIN CONTENT -->
+    <!--main content end-->
+    <!--footer start-->
+    <%- include('footer'); -%>
+
+    <%- include('pied'); -%>

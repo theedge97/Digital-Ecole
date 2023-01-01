@@ -1,0 +1,122 @@
+<%- include('tete'); -%>
+<link rel="stylesheet" type="text/css" href="/assets/semantic/css/jquery-ui.min.css">
+    <style>
+    .ui-tabs-nav li > a
+    {
+
+        width: 100%;
+        text-align: center;
+        height: 70px;
+        font-size: 20px;
+        padding-top: 40px;
+    }
+    .ui-tabs-nav li
+    {
+        width: 24%;
+    }
+    .ui-widget-header
+    {
+        background: #111F29 none repeat scroll 0% 0%;
+        color: #1891EC;
+        height: 80px; 
+        width: 100%;
+    }
+    .ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+    border: 1px solid #003eff;
+    background: #F6B60B;
+    font-weight: normal;
+    color: #ffffff;
+}
+    #discution > li
+    {
+        border-bottom: 2px solid silver; 
+        box-shadow: 5px 5px 5px 5px  silver;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: -40px;
+        margin-top: 30px;
+    
+    }
+    #discution > li > a:hover
+    {
+        text-decoration: none;
+    }
+    .user-profile-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+.rounded-circle {
+    border-radius: 50% !important;
+}
+/* lien de telechargement */
+#telelien:hover
+{
+    color: #f8b81d;
+}
+
+
+</style>
+<!-- en tete-->
+<%- include('header'); -%>
+<!-- Slider area -->
+<section class="banner_area" data-stellar-background-ratio="0.5">
+    <h2>Modification du compte</h2>
+    <ol class="breadcrumb">
+        <li><a href="#" class="active">Modifier votre mot de passe</a></li>
+    </ol>
+</section>
+    <div class="container">  
+    <!-- debut du formulaire -->
+    <div class="row">
+        <div style="background: #fff; padding: 20px;" class=" col-lg-offset-3 col-md-offset-3 col-sm-offset-2 col-sm-8 col-md-6 col-lg-6">
+        <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <h4>Matricule</h4><br>
+        <p style="font-size: 30px; margin-top: -20px; color: gray;"><%= matricule %></p>
+      </div>
+    </div>      
+        </div>
+    </div>
+    <div class="row">
+        <div style="background: #fff; padding: 20px;" class=" col-lg-offset-3 col-md-offset-3 col-sm-offset-2 col-sm-8 col-md-6 col-lg-6">
+        <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <h4>Classe</h4><br>
+        <p style="font-size: 30px; margin-top: -20px; color: gray;"><%= classe %></p>
+      </div>
+      
+    </div>
+        </div>
+    </div>
+    <div class="row">
+        <div style="background: #fff; padding: 20px;" class=" col-lg-offset-3 col-md-offset-3 col-sm-offset-2 col-sm-8 col-md-6 col-lg-6">
+        <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <h4>Mots de passe</h4><br>
+        <p style="font-size: 20px; margin-top: -20px; color: gray;">xxxxxxxx</p>
+        </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <a  href="/forum/modifiepasse"><button data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style=" background: #F6B60B; border-color: #fff; width: 100%; font-size: 20px;" id="matricule" class=" btn btn-primary">Modifier</button></a>
+      </div>
+    </div>
+          
+        </div>
+        
+    </div>
+    
+</div>      
+    
+
+<%- include('pied'); -%>
+
+<script src="/assets/semantic/js/moment.js"></script>
+<script src="/assets/semantic/js/moment-with-locales.js"></script>
+</body>
+</html>

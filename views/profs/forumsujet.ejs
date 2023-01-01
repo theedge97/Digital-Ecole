@@ -1,0 +1,45 @@
+<%- include('tete'); -%>
+<!--sidebar end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+<section id="main-content">
+      <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> Question</h3>
+        <!-- BASIC FORM ELELEMNTS -->
+        <div class="row mt">
+          <div class="col-md-12 mb">
+            <div class="message-p pn">
+              <div style="background-color: #2f323a; " class="message-header">
+                <h4 style="font-weight: 900; color: #FFF;">POSEZ VOTRE QUESTION</h4>
+              </div>
+              <div class="row">
+                
+                <div class="col-md-offset-2 col-md-9">
+                  <p style="font-size: 20px;" class="message">Tapez ici pour poser les questions de votre choix a vos eleves.</p>
+                  <form class="form" action="/profs/poserquestion" method="POST" role="form">
+                    <div class="form-group">
+                      
+                <textarea class="form-control" name="question" id="contact-message" placeholder="votre question" rows="5" data-rule="required" data-msg="Please write something for us"></textarea> 
+                <button type="submit"  class="btn btn-default">ENVOYER</button>
+                      
+              </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+            <!-- /Message Panel-->
+          </div>
+
+        </div>
+        <!-- /row -->
+
+
+        <!-- /row -->
+      </section>   
+   <!-- /MAIN CONTENT -->
+    <!--main content end-->
+    <!--footer start-->
+    <%- include('footer'); -%>
+    <%- include('pied'); -%>

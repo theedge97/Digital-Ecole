@@ -1,0 +1,66 @@
+<%- include('tete'); -%>
+    <!--sidebar end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper site-min-height">
+        <h3>Forum de Discution</h3>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row">         
+            <div style="background: #fff; margin-top: 20px; height: 100%; padding: 25px; margin-bottom: 5px;" class="col-lg-12" >
+            <div class="row">
+            <div class="col-lg-12">
+            <h4>Cliquez ce bouttons si dessous pour poser n'importe quel question </h4></div>
+            <div class="col-lg-offset-4 col-md-offset-4 col-xs-offset-3 col-sm-offset-3 col-lg-6">
+            <a href="/profs/forumsujet"><button style="background: #4ECDC4; color: #fff; font-size: 20px; padding: 15px; border-color: #fff;"><i class="fa fa-plus"></i> Nouveau sujet </button></a></div>
+        </div>
+            </div>
+            <h2 style="text-align: center;">Les discutions</h2>
+            <div style="background: #fff; margin-top: 20px; height: 100%; padding: 25px;" class="col-lg-12" >
+          
+              <% for(var i= question.length -1 ; i >= 0; i--)  {%> 
+             <div class="col-lg-offset-2 col-lg-7" style="background: #4ECDC4; color: #fff; padding: 25px; margin-top: 20px;"><a style="color: #fff;" href="/profs/forumrepondre/<%= classe %>/<%= cour %>/<%= question[i]['id'] %> ">
+                    <div class="row">
+                         <div class="col-md-2   ">
+                      <img src="/assets/semantic/profs/img/ui-divya.jpg" class="img-circle" width="65">
+                    </div>
+                    <div class="col-md-10 ">
+                      <p style="color:  black; font-weight: bold;">
+                        <name><%= question[i]['pseudo'] %></name>
+                      </p>
+                      <p id="date" style="color:  black; font-weight: bold;" class="small"><%= question[i]['date'] %> </p>
+                      <p style="color: #fff; font-weight: 900;" class="message"><%= question[i]['question'] %></p>
+                    </div>
+                    </div>
+                </a>
+              </div>
+              <% } %>
+            </div>
+          <!--  /col-lg-12 -->
+        </div>
+        <!--  /row -->
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+    <!--main content end-->
+    <!--footer start-->
+    <%- include('footer'); -%>
+    
+    <script src="/assets/semantic/profs/js/moment.js"></script>
+    <script src="/assets/semantic/profs/js/moment-with-locales.js"></script>
+    
+    <script>
+      var date = document.querySelectorAll('#date')
+      moment.locale('fr')
+      var element = '';
+      for (var  i = 0; i< date.length; i++) {
+       element = date[i].textContent;
+      var datation = moment(element).fromNow();
+      date[i].innerHTML = datation;
+          }
+    </script>
+    <%- include('pied'); -%>

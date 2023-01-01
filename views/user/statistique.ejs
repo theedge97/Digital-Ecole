@@ -1,0 +1,410 @@
+<%- include('tete'); -%>
+<link rel="stylesheet" type="text/css" href="/assets/semantic/css/jquery-ui.min.css">
+<style>
+.ui-tabs-nav li > a
+{
+
+    width: 100%;
+    text-align: center;
+    height: 70px;
+    font-size: 20px;
+    padding-top: 40px;
+}
+.ui-tabs-nav li
+{
+    width: 49%;
+}
+.ui-widget-header
+{
+    background: #111F29 none repeat scroll 0% 0%;
+    color: #1891EC;
+    height: 80px; 
+    width: 100%;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+border: 1px solid #003eff;
+background: #F6B60B;
+font-weight: normal;
+color: #ffffff;
+}
+
+
+</style>
+<!-- en tete-->
+<%- include('header'); -%>
+<!-- Slider area -->
+<section class="banner_area" data-stellar-background-ratio="0.5">
+    <h2>Statistique</h2>
+    <ol class="breadcrumb">
+        <li><a href="#" class="active">Information sur les Statistiques de chaques departements</a></li>
+    </ol>
+</section>
+    <div id="tabs">
+<ul>
+    <li><a href="#tabs-1">COLLEGE</a></li>
+    <li><a href="#tabs-2">LYCEE</a></li>
+</ul>
+<div id="tabs-1"> <section class="about_us_area row">
+    <div class="container">
+        <div class="tittle wow fadeInUp">
+            <h2>Les statistiques des classses du college</h2>
+        </div>
+        <div class="row about_row">
+            <div class="container">
+                <div class="about">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8">
+            <h4>7e annee</h4>
+            <canvas id="myChart"></canvas>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <h3>Legende</h3>
+            <ul style="list-style: none; font-size: 20px;">
+              <li><em>Candidat inscrits: </em> 104</li>
+              <li><em>Candidat ayant compose :</em>100</li>
+              <li><em>Nombre de fille:  </em>60</li>
+              <li><em>Nombre de garcons: </em>40</li>
+              <li><em>Total d'admis:  </em>95</li>
+              <li><em>Total d'admis de garcons:  </em>35</li>
+              <li><em>Total d'admis de fille:  </em>60</li>
+              <li><em>Taux de reussite: </em>95%</li>
+              <li><em>Taux de reussite de garcons: </em>88%</li>
+              <li><em>Taux de reussite de fille: </em>100%</li>
+            </ul>
+          </div>
+                    </div>
+        <div class="row">
+          <div class="col-lg-8 col-md-8">
+            <h4>8e annee</h4>
+            <canvas id="myChart1"></canvas>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <h3>Legende</h3>
+            <ul style="list-style: none; font-size: 20px;">
+              <li><em>Candidat inscrits: </em> 104</li>
+              <li><em>Candidat ayant compose :</em>100</li>
+              <li><em>Nombre de fille:  </em>60</li>
+              <li><em>Nombre de garcons: </em>40</li>
+              <li><em>Total d'admis:  </em>95</li>
+              <li><em>Total d'admis de garcons:  </em>35</li>
+              <li><em>Total d'admis de fille:  </em>60</li>
+              <li><em>Taux de reussite: </em>95%</li>
+              <li><em>Taux de reussite de garcons: </em>88%</li>
+              <li><em>Taux de reussite de fille: </em>100%</li>
+            </ul>
+          </div>
+        </div>
+         <div class="row">
+          <div class="col-lg-8 col-md-8">
+            <h4>9e annee</h4>
+            <canvas id="myChartSM"></canvas>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <h3>Legende</h3>
+            <ul style="list-style: none; font-size: 20px;">
+              <li><em>Candidat inscrits: </em> 104</li>
+              <li><em>Candidat ayant compose :</em>100</li>
+              <li><em>Nombre de fille:  </em>60</li>
+              <li><em>Nombre de garcons: </em>40</li>
+              <li><em>Total d'admis:  </em>95</li>
+              <li><em>Total d'admis de garcons:  </em>35</li>
+              <li><em>Total d'admis de fille:  </em>60</li>
+              <li><em>Taux de reussite: </em>95%</li>
+              <li><em>Taux de reussite de garcons: </em>88%</li>
+              <li><em>Taux de reussite de fille: </em>100%</li>
+            </ul>
+          </div>
+        </div>
+         <div class="row">
+          <div class="col-lg-8 col-md-8">
+            <h4>10e annee</h4>
+            <canvas id="myChartSS"></canvas>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <h3>Legende</h3>
+            <ul style="list-style: none; font-size: 20px;">
+              <li><em>Candidat inscrits: </em> 104</li>
+              <li><em>Candidat ayant compose :</em>100</li>
+              <li><em>Nombre de fille:  </em>60</li>
+              <li><em>Nombre de garcons: </em>40</li>
+              <li><em>Total d'admis:  </em>95</li>
+              <li><em>Total d'admis de garcons:  </em>35</li>
+              <li><em>Total d'admis de fille:  </em>60</li>
+              <li><em>Taux de reussite: </em>95%</li>
+              <li><em>Taux de reussite de garcons: </em>88%</li>
+              <li><em>Taux de reussite de fille: </em>100%</li>
+            </ul>
+          </div>
+        </div>
+                    <!-- Our Team starts -->                    
+                </div>
+                                
+            </div>
+        </div>
+    </div>
+</section></div>
+<div id="tabs-2"> 
+ <section class="about_us_area row">
+    <div class="container">
+        <div class="tittle wow fadeInUp">
+            <h2>Les statistiques des classes du lycee</h2>
+        </div>
+        <div class="row about_row">
+            <div class="container">
+                <div class="about">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8">
+            <h4>Terminale Science Sociale</h4>
+            <canvas id="droit"></canvas>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <h3>Legende</h3>
+            <ul style="list-style: none; font-size: 20px;">
+              <li><em>Candidat inscrits: </em> 104</li>
+              <li><em>Candidat ayant compose :</em>100</li>
+              <li><em>Nombre de fille:  </em>60</li>
+              <li><em>Nombre de garcons: </em>40</li>
+              <li><em>Total d'admis:  </em>95</li>
+              <li><em>Total d'admis de garcons:  </em>35</li>
+              <li><em>Total d'admis de fille:  </em>60</li>
+              <li><em>Taux de reussite: </em>95%</li>
+              <li><em>Taux de reussite de garcons: </em>88%</li>
+              <li><em>Taux de reussite de fille: </em>100%</li>
+            </ul>
+          </div>
+                    </div>
+        <div class="row">
+          <div class="col-lg-8 col-md-8">
+            <h4>Terminale Science Mathematique</h4>
+            <canvas id="sp"></canvas>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <h3>Legende</h3>
+            <ul style="list-style: none; font-size: 20px;">
+              <li><em>Candidat inscrits: </em> 104</li>
+              <li><em>Candidat ayant compose :</em>100</li>
+              <li><em>Nombre de fille:  </em>60</li>
+              <li><em>Nombre de garcons: </em>40</li>
+              <li><em>Total d'admis:  </em>95</li>
+              <li><em>Total d'admis de garcons:  </em>35</li>
+              <li><em>Total d'admis de fille:  </em>60</li>
+              <li><em>Taux de reussite: </em>95%</li>
+              <li><em>Taux de reussite de garcons: </em>88%</li>
+              <li><em>Taux de reussite de fille: </em>100%</li>
+            </ul>
+          </div>
+        </div>
+         <div class="row">
+          <div class="col-lg-8 col-md-8">
+            <h4>Terminale Science Experimentale</h4>
+            <canvas id="gi"></canvas>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <h3>Legende</h3>
+            <ul style="list-style: none; font-size: 20px;">
+              <li><em>Candidat inscrits: </em> 104</li>
+              <li><em>Candidat ayant compose :</em>100</li>
+              <li><em>Nombre de fille:  </em>60</li>
+              <li><em>Nombre de garcons: </em>40</li>
+              <li><em>Total d'admis:  </em>95</li>
+              <li><em>Total d'admis de garcons:  </em>35</li>
+              <li><em>Total d'admis de fille:  </em>60</li>
+              <li><em>Taux de reussite: </em>95%</li>
+              <li><em>Taux de reussite de garcons: </em>88%</li>
+              <li><em>Taux de reussite de fille: </em>100%</li>
+            </ul>
+          </div>
+        </div>   <!-- Our Team starts -->                    
+                </div>
+                                
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+</div>
+<%- include('pied'); -%>
+<script src="/assets/semantic/js/jquery-ui.min.js"></script>
+     <script>
+    $( "#tabs" ).tabs();
+    </script>
+ <script src="/assets/semantic/js/Chart.min.js"></script>
+ <script>
+    //BTS
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+type: "doughnut",
+data: {
+  labels: ["Taux d'admis ","Taux d'echec "],
+  datasets: [{
+   label: "Mon premier",
+   backgroundColor: ["#F6B60B",
+    "#333",
+    ],
+   borderColor: '#fff',
+   data: [95,5]
+  }]
+},
+options: {
+  legend: {
+    display: true,
+    position: "right"
+  } 
+}
+});
+var ctx1 = document.getElementById('myChart1').getContext('2d');
+var chart = new Chart(ctx1, {
+type: "doughnut",
+data: {
+  labels: ["Taux d'admis ","Taux d'echec "],
+  datasets: [{
+   label: "Mon premier",
+   backgroundColor: ["#F6B60B",
+    "#333",
+    ],
+   borderColor: '#fff',
+   data: [95,5]
+  }]
+},
+options: {
+  legend: {
+    display: true,
+    position: "right"
+  } 
+}
+});
+var ctxSM = document.getElementById('myChartSM').getContext('2d');
+var chart = new Chart(ctxSM, {
+type: "doughnut",
+data: {
+  labels: ["Taux d'admis ","Taux d'echec "],
+  datasets: [{
+   label: "Mon premier",
+   backgroundColor: ["#F6B60B",
+    "#333",
+    ],
+   borderColor: '#fff',
+   data: [95,5]
+  }]
+},
+options: {
+  legend: {
+    display: true,
+    position: "right"
+  } 
+}
+});
+var ctxSS = document.getElementById('myChartSS').getContext('2d');
+var chart = new Chart(ctxSS, {
+type: "doughnut",
+data: {
+  labels: ["Taux d'admis ","Taux d'echec "],
+  datasets: [{
+   label: "Mon premier",
+   backgroundColor: ["#F6B60B",
+    "#333",
+    ],
+   borderColor: '#fff',
+   data: [95,5]
+  }]
+},
+options: {
+  legend: {
+    display: true,
+    position: "right"
+  } 
+}
+});
+  //BT
+var droit = document.getElementById('droit').getContext('2d');
+var chart = new Chart(droit, {
+type: "doughnut",
+data: {
+  labels: ["Taux d'admis ","Taux d'echec "],
+  datasets: [{
+   label: "Mon premier",
+   backgroundColor: ["#F6B60B",
+    "#333",
+    ],
+   borderColor: '#fff',
+   data: [95,5]
+  }]
+},
+options: {
+  legend: {
+    display: true,
+    position: "right"
+  } 
+}
+});
+var sp = document.getElementById('sp').getContext('2d');
+var sp = new Chart(sp, {
+type: "doughnut",
+data: {
+  labels: ["Taux d'admis ","Taux d'echec "],
+  datasets: [{
+   label: "Mon premier",
+   backgroundColor: ["#F6B60B",
+    "#333",
+    ],
+   borderColor: '#fff',
+   data: [95,5]
+  }]
+},
+options: {
+  legend: {
+    display: true,
+    position: "right"
+  } 
+}
+});
+var gi = document.getElementById('gi').getContext('2d');
+var gi = new Chart(gi, {
+type: "doughnut",
+data: {
+  labels: ["Taux d'admis ","Taux d'echec "],
+  datasets: [{
+   label: "Mon premier",
+   backgroundColor: ["#F6B60B",
+    "#333",
+    ],
+   borderColor: '#fff',
+   data: [95,5]
+  }]
+},
+options: {
+  legend: {
+    display: true,
+    position: "right"
+  } 
+}
+});
+var gc = document.getElementById('gc').getContext('2d');
+var gc = new Chart(gc, {
+type: "doughnut",
+data: {
+  labels: ["Taux d'admis ","Taux d'echec "],
+  datasets: [{
+   label: "Mon premier",
+   backgroundColor: ["#F6B60B",
+    "#333",
+    ],
+   borderColor: '#fff',
+   data: [95,5]
+  }]
+},
+options: {
+  legend: {
+    display: true,
+    position: "right"
+  } 
+}
+});
+</script>
+</body>
+</html>

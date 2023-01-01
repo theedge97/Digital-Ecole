@@ -1,0 +1,93 @@
+<%- include('tete'); -%>
+<link rel="stylesheet" type="text/css" href="/assets/semantic/css/jquery-ui.min.css">
+<style>
+.ui-tabs-nav li > a
+{
+
+    width: 100%;
+    text-align: center;
+    height: 70px;
+    font-size: 20px;
+    padding-top: 40px;
+}
+.ui-tabs-nav li
+{
+    width: 49%;
+}
+.ui-widget-header
+{
+    background: #111F29 none repeat scroll 0% 0%;
+    color: #1891EC;
+    height: 80px; 
+    width: 100%;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+border: 1px solid #003eff;
+background: #F6B60B;
+font-weight: normal;
+color: #ffffff;
+}
+
+</style>
+
+<!-- en tete-->
+<%- include('header'); -%>
+<!-- Slider area -->
+<section class="banner_area" data-stellar-background-ratio="0.5">
+    <h2>Critere d'Inscription</h2>
+    <ol class="breadcrumb">
+        <li><a href="#" class="active">Information sur les criteres d'inscription</a></li>
+    </ol>
+</section>
+    <div id="tabs">
+<ul>
+    <li><a href="#tabs-1">COLLEGE</a></li>
+    <li><a href="#tabs-2">LYCEE</a></li>
+</ul>
+<div id="tabs-1"> <section class="about_us_area row">
+    <div class="container">
+        <div class="tittle wow fadeInUp">
+            <h2>Les dossiers a fournir pour l'inscription dans une classe de College</h2>
+        </div>
+        <div class="row about_row">
+            <div class="who_we_area col-md-7 col-sm-6">
+                <ul style="font-size: 25px;">
+                    <li>Attestation du CEPD</li>
+                    <li>Extrait de naissance</li>
+                    <li>4 photos d'identiter</li>
+                    <li>Releves des notes des classes precedentes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section></div>
+<div id="tabs-2"> <section class="about_us_area row">
+    <div class="container">
+        <div class="tittle wow fadeInUp">
+            <h2>Les dossiers a fournir pour l'inscription des classes de LYCEE</h2>
+        </div>
+        <div class="row about_row">
+            <div class="who_we_area col-md-7 col-sm-6">
+                <ul style="font-size: 25px;">
+                    <li>Attestation du BEPC</li>
+                    <li>Extrait de naissance</li>
+                    <li>4 photos d'identiter</li>
+                    <li>Releves des notes des classes precedentes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section></div>
+</div>
+<%- include('pied'); -%>
+<script src="/assets/semantic/js/jquery-ui.min.js"></script>
+     <script>
+    $( "#tabs" ).tabs();
+    </script>
+</body>
+</html>

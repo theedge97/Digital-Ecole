@@ -1,0 +1,66 @@
+<%- include('tete'); -%>
+<style>
+    #liste > ul > li
+    {
+        list-style: none;
+        background: #F6B60B;
+       border: 2px solid #fff;
+       width: 100%;
+   
+    }
+    #liste > ul > li > a
+    {
+        color: black;
+   
+    }
+    #liste > ul > li > a:hover
+    {
+        color: black;
+   
+    }
+    #liste > ul > li:hover
+    {
+        background: #FFF;
+        border-color: black;
+   
+    }
+   
+   </style>
+<!-- en tete-->
+<%- include('header'); -%>
+<!-- Slider area -->
+<section class="banner_area" data-stellar-background-ratio="0.5">
+    <h2>Actualite de Ecole</h2>
+    <ol class="breadcrumb">
+        <li><a href="#" class="active">Decouvrez ici les actualites de l'ecole</a></li>
+    </ol>
+</section>
+    
+ <section class="about_us_area row">
+    <div class="container">
+        <div  class="tittle wow fadeInUp">
+            <h2 id="titre"><%= reponse.titre %></h2>
+        </div>
+        <div class="row about_row">
+            <div id="contenu" class="who_we_area col-md-7 col-sm-6 col-xs-12">
+                <%= reponse.contenu %>
+            </div>
+            <div id="liste" class="col-md-5 col-xs-12">
+                <ul>
+                    <% for(var i= 0 ; i < requette.length; i++)  {%>
+    <li <% if(reponse.id === requette[i].id){  %> style="background: #FFF;
+ border-color: #F6B60B;  "  <% } %> ><a class="lien" href="/actualite/<%= requette[i].id %>"><div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><img src="/assets/semantic/images/works/<%= requette[i].photo %>" style="width: 100%; height: 100%; "></div>
+        <div style="font-size: 20px; " class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><%= requette[i].titre %></div>
+    </div></a></li>
+    <% } %>
+</ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<%- include('pied'); -%>
+</body>
+</html>
